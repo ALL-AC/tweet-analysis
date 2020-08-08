@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS `twitter`;
+CREATE TABLE `twitter` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `date` DATE NOT NULL COMMENT '发布时间',
+    `tweet` VARCHAR(512) NOT NULL COMMENT '推文',
+    PRIMARY KEY (`id`)
+)ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8mb4;
