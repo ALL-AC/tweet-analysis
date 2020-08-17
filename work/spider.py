@@ -14,12 +14,17 @@ def spider(keyword, tweets):
     # 启动配置
     c = twint.Config()
     c.Search = keyword
-    c.Limit = 100
+    c.Limit = Limit
     c.Count = True
+
+    # 过滤含连接的tweet
     # c.Links = "exclude"
+
+    # 只爬取热门tweet
     # c.Popular_tweets = True
+
+    # 过滤转发
     c.Filter_retweets = True
-    # c.Format = "{date}---{tweet}"
 
     # 统一翻译为英语，不然后面分词时鱼龙混杂
     c.Lang = "en"
@@ -139,18 +144,18 @@ if __name__ == '__main__':
     Until = "2020-07-30 23:59:59"
 
     # 要限制爬取条数，防止内存压力过大
-    Limit = 200
+    Limit = 500
     # ############################################### #
 
     # 关键词序列
-    # keywords = ["Herring", "Salmon", "Plaice", "Cod", "Mackerel", "Anchovy", "tilapia", "Eel"
-    #              "Perch", "Carp", "Yellow croaker", "Tuna", "Swordfish", "Trout", "Hlibut", "Grouper"
-    #              "Bass", "Ribbonfish", "Buffalo fish", "Anglerfish", "Clam", "Culter", "roe",
-    #              "shrimp", "prawn", "toad", "crevette", "macruran", "lobster", "langouste", "scampi", "squid",
-    #              "cuttlefish", "striped mullet", "sepia", "inkfish", "cuttle", "shellfish", "escargots",
-    #              "oyster", "whelk", "conch", "trumpetshelly", "scallop", "octopus", "cucumber", "scallop",
-    #              "mussel", "Ostracean", "seaurchin", "Canned caviar", "Hairtail canned", "Canned abalone",
-    #              "Canned salmon", "Yellow croaker dry", "The roast eel", "Dried razor clam", "Salted fish",
-    #              "codfiller", "silver carp", "crab stick"]
+    keywords = ["herring", "salmon", "Plaice", "Cod", "Mackerel", "Anchovy", "tilapia", "Eel",
+                "Perch", "carp", "Yellow croaker", "Tuna", "Swordfish", "Trout", "Hlibut", "Grouper",
+                "Bass", "Ribbonfish", "Buffalo fish", "Anglerfish", "Clam", "Culter", "roe",
+                "shrimp", "prawn", "toad", "crevette", "macruran", "lobster", "langouste", "scampi", "squid",
+                "cuttlefish", "striped mullet", "sepia", "inkfish", "cuttle", "shellfish", "escargots",
+                "oyster", "whelk", "conch", "trumpetshelly", "scallop", "octopus", "cucumber", "scallop",
+                "mussel", "Ostracean", "seaurchin", "Canned caviar", "Hairtail canned", "Canned abalone",
+                "Yellow croaker dry", "The roast eel", "Salted fish", "codfiller", "silver carp", "crab stick"]
 
-    crawl_in_file('cuttlefish'.lower())
+    for keyword in keywords:
+        crawl_in_file(keyword.lower())
