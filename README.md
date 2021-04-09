@@ -11,7 +11,3 @@
 + TWINT 用于推特爬虫 <https://github.com/twintproject/twint>
 + NLTK 用于自然语言处理 <https://github.com/nltk/nltk>
 + PyMySQL 用于操作数据库
-
-## 注意
-
-将项目clone到本地之后，要先在该项目的根目录下创建名为`data`和`result`两个文件夹
