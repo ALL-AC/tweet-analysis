@@ -173,6 +173,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# 自己创建
 data/
 result/
