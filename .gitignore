@@ -174,5 +174,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # 自己创建
-!/data/
-!/result/
+data/
+result/
